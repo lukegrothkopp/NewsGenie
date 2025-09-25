@@ -1,3 +1,10 @@
+import os, pathlib, streamlit as st
+HERE = pathlib.Path(__file__).resolve().parent
+st.write("CWD:", os.getcwd())
+st.write("App file directory:", HERE.as_posix())
+st.write("Dir listing:", [p.name for p in HERE.iterdir()])
+st.write("Services present?:", (HERE/"services").exists())
+
 # app.py (root)
 import os
 import streamlit as st
