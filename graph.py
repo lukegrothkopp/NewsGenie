@@ -1,19 +1,13 @@
-import sys, pathlib
-HERE = pathlib.Path(__file__).resolve().parent
-if str(HERE) not in sys.path:
-    sys.path.insert(0, str(HERE))
+# graph.py (root)
+from __future__ import annotations
+from typing import List
 
-try:
-    from .llm import classify_intent, summarize_news, answer_general
-except ImportError:
-    from llm import classify_intent, summarize_news, answer_general
+from langgraph.graph import StateGraph, END
+from pydantic import BaseModel, Field
 
-try:
-    from .services.news_providers import NewsAPIProvider, NewsProviderError
-    from .services.web_search import TavilySearch, WebSearchError
-except ImportError:
-    from services.news_providers import NewsAPIProvider, NewsProviderError
-    from services.web_search import TavilySearch, WebSearchError
+from llm import classify_intent, summarize_news, answer_general
+from services.news_providers import NewsAPIProvider, NewsProviderError
+from services.web_search import TavilySearch, WebSearchError
 
 class NGState(BaseModel):
     query: str
