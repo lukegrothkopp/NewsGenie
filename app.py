@@ -1,11 +1,7 @@
-import sys, pathlib
-HERE = pathlib.Path(__file__).resolve().parent
-if str(HERE) not in sys.path:
-    sys.path.insert(0, str(HERE))
-try:
-    from .graph import build_graph, NGState
-except ImportError:
-    from graph import build_graph, NGState
+# app.py (root)
+import os
+import streamlit as st
+from graph import build_graph, NGState  # flat, simple import
 
 # Optional dotenv (for local runs)
 try:
@@ -100,3 +96,4 @@ if user_msg:
 
 st.markdown("---")
 st.caption("NewsGenie demo — integrates OpenAI + NewsAPI + Tavily via a LangGraph workflow. Built with Streamlit.")
+
