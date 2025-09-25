@@ -95,5 +95,5 @@ if user_msg:
                 st.info("Notes:\n" + "\n".join(result.errors))
 
 st.markdown("---")
-st.caption("newsgenie demo — integrates OpenAI + NewsAPI + Tavily via a LangGraph workflow. Built with Streamlit.")
+st.caption("Hyperdrive Headllines Powered by OpenAI + NewsAPI + Tavily via a LangGraph workflow")
 
