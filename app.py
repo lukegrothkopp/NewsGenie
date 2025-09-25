@@ -59,7 +59,7 @@ def coerce_state(result):
 
 with st.expander("🗞️ Quick News Feeds", expanded=False):
     st.write("Select a category and click **Get Latest** to fetch a digest.")
-    base = ["technology","finance","sports"]
+    base = ["technology","finance","sports","business","science","health","entertainment","politics","world"]
     cat = st.selectbox("Category", base, index=0, key="quick_cat")
     if st.button("Get Latest", key="get_latest_btn"):
         state = NGState(query=f"latest {cat} news", intent="news", category=cat)
