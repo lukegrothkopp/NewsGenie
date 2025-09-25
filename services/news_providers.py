@@ -10,7 +10,18 @@ class NewsProviderError(Exception):
 class NewsAPIProvider:
     """NewsAPI.org provider (requires NEWSAPI_KEY env)."""
     BASE = "https://newsapi.org/v2"
-    CATEGORY_MAP = {"technology": "technology", "finance": "business", "sports": "sports"}
+    CATEGORY_MAP = {
+    "technology": "technology",
+    "finance": "business",        # keep "finance" as alias to NewsAPI's "business"
+    "sports": "sports",
+    "business": "business",
+    "science": "science",
+    "health": "health",
+    "entertainment": "entertainment",
+    # Not first-class NewsAPI categories → use search() fallback:
+    "world": None,
+    "politics": None,
+}
 
     def __init__(self, api_key: Optional[str] = None, country: str = "us"):
         self.api_key = api_key or os.getenv("NEWSAPI_KEY") or os.getenv("NEWS_API_KEY")
@@ -63,3 +74,4 @@ class NewsAPIProvider:
             "content": a.get("content"),
             "provider": "newsapi"
         } for a in data]
+
