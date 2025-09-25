@@ -3,9 +3,9 @@ from typing import List
 from langgraph.graph import StateGraph, END
 from pydantic import BaseModel, Field
 
-from llm import classify_intent, summarize_news, answer_general
-from services.news_providers import NewsAPIProvider, NewsProviderError
-from services.web_search import TavilySearch, WebSearchError
+from .llm import classify_intent, summarize_news, answer_general
+from .services.news_providers import NewsAPIProvider, NewsProviderError
+from .services.web_search import TavilySearch, WebSearchError
 
 class NGState(BaseModel):
     query: str
