@@ -1,5 +1,5 @@
 import os, streamlit as st
-from graph import build_graph, NGState
+from .graph import build_graph, NGState
 
 # Optional dotenv (for local runs)
 try:
