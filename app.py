@@ -9,8 +9,8 @@ try:
 except Exception:
     pass
 
-st.set_page_config(page_title="newsgenie", page_icon="🧞", layout="wide")
-st.title("🧞 NewsGenie — AI-Powered Information & News Assistant")
+st.set_page_config(page_title="newsgenie", page_icon="🚀", layout="wide")
+st.title("🚀 NovaFeed — AI-Powered Headlines From Across the Universe")
 
 def _secret(name: str):
     val = os.environ.get(name)
@@ -57,7 +57,7 @@ def coerce_state(result):
             )
     return result
 
-with st.expander("🗞️ Quick News Feeds", expanded=False):
+with st.expander("🌌 Nebula Nuggets", expanded=False):
     st.write("Select a category and click **Get Latest** to fetch a digest.")
     base = ["technology","finance","sports","business","science","health","entertainment","politics","world"]
     cat = st.selectbox("Category", base, index=0, key="quick_cat")
@@ -72,7 +72,7 @@ with st.expander("🗞️ Quick News Feeds", expanded=False):
 
 st.markdown("---")
 
-st.subheader("💬 Ask newsgenie")
+st.subheader("🧑‍🚀 Ask Nova")
 for role, content in st.session_state.chat:
     with st.chat_message(role):
         st.markdown(content)
