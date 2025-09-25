@@ -1,5 +1,11 @@
-import os, streamlit as st
-from .graph import build_graph, NGState
+import sys, pathlib
+HERE = pathlib.Path(__file__).resolve().parent
+if str(HERE) not in sys.path:
+    sys.path.insert(0, str(HERE))
+try:
+    from .graph import build_graph, NGState
+except ImportError:
+    from graph import build_graph, NGState
 
 # Optional dotenv (for local runs)
 try:
