@@ -16,7 +16,7 @@ try:
 except Exception:
     pass
 
-st.set_page_config(page_title="NewsGenie", page_icon="🧞", layout="wide")
+st.set_page_config(page_title="newsgenie", page_icon="🧞", layout="wide")
 st.title("🧞 NewsGenie — AI-Powered Information & News Assistant")
 
 def _secret(name: str):
@@ -79,7 +79,7 @@ with st.expander("🗞️ Quick News Feeds", expanded=False):
 
 st.markdown("---")
 
-st.subheader("💬 Ask NewsGenie")
+st.subheader("💬 Ask newsgenie")
 for role, content in st.session_state.chat:
     with st.chat_message(role):
         st.markdown(content)
@@ -102,5 +102,5 @@ if user_msg:
                 st.info("Notes:\n" + "\n".join(result.errors))
 
 st.markdown("---")
-st.caption("NewsGenie demo — integrates OpenAI + NewsAPI + Tavily via a LangGraph workflow. Built with Streamlit.")
+st.caption("newsgenie demo — integrates OpenAI + NewsAPI + Tavily via a LangGraph workflow. Built with Streamlit.")
 
