@@ -9,7 +9,7 @@ try:
 except Exception:
     pass
 
-st.set_page_config(page_title="newsgenie", page_icon="🚀", layout="wide")
+st.set_page_config(page_title="NovaFeed", page_icon="🚀", layout="wide")
 st.title("🚀 NovaFeed — AI-Powered Headlines From Across the Universe")
 
 def _secret(name: str):
