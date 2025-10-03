@@ -95,5 +95,5 @@ if user_msg:
                 st.info("Notes:\n" + "\n".join(result.errors))
 
 st.markdown("---")
-st.caption("Hyperdrive Headllines Powered by OpenAI + NewsAPI + Tavily via a LangGraph workflow")
+st.caption("Hyperdrive Headlines Powered by OpenAI + NewsAPI + Tavily via a LangGraph workflow")
 
